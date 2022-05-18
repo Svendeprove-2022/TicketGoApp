@@ -18,6 +18,9 @@
     <string name="tv_post_code">Post code</string>
     <string name="tv_city">City</string>
     <string name="tv_country">Country</string>
-
+    <string name="btn_create_an_account">Create an account</string>
+    <string name="tv_toc_label">Terms and Conditions</string>
+    <string name="tv_toc_description">We use your information to provide you with our services, which we personalise based on information we hold about you and how you interact with us. Please see our <b>Privacy Policy</b> for full details. As a registered user of TicketGO, you are also subject to the <b>Terms of Use</b>.</string>
+    <string name="tv_toc_required">I agree to the Terms of Use and Terms of Purchase.</string>
 
 </resources>
