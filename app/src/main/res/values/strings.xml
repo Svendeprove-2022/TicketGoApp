@@ -1,12 +1,23 @@
 <resources>
-    <string name="app_name">TicketGoApp</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name">TicketGo</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Sign Up -->
+    <string name="tv_sign_up_title">Create a TicketGO Account</string>
+    <string name="tv_step_1">Step 1 of 3</string>
+    <string name="tv_step_2">Step 2 of 3</string>
+    <string name="tv_step_3">Step 3 of 3</string>
+    <string name="tv_email_address">Email Address</string>
+    <string name="tv_password">Password</string>
+    <string name="tv_password_requirements_label">Your password must:</string>
+    <string name="tv_password_requirements">Include between 8 and 64 characters\nInclude at least 1 number and letter</string>
+    <string name="tv_first_name">First Name</string>
+    <string name="tv_last_name">Last Name</string>
+    <string name="btnContinue">Continue</string>
+    <string name="tv_phone_number">Phone Number</string>
+    <string name="tv_address">Address</string>
+    <string name="tv_post_code">Post code</string>
+    <string name="tv_city">City</string>
+    <string name="tv_country">Country</string>
+
+
 </resources>
