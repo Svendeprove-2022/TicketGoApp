@@ -6,7 +6,7 @@
     app:startDestination="@id/signUpStep1Fragment">
     <fragment
         android:id="@+id/signUpStep1Fragment"
-        android:name="com.example.ticketgoapp.SignUpStep1Fragment"
+        android:name="com.example.ticketgoapp.fragments.SignUpStep1Fragment"
         android:label="fragment_sign_up_step1"
         tools:layout="@layout/fragment_sign_up_step1" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpStep2Fragment"
-        android:name="com.example.ticketgoapp.SignUpStep2Fragment"
+        android:name="com.example.ticketgoapp.fragments.SignUpStep2Fragment"
         android:label="fragment_sign_up_step2"
         tools:layout="@layout/fragment_sign_up_step2" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpStep3Fragment"
-        android:name="com.example.ticketgoapp.SignUpStep3Fragment"
+        android:name="com.example.ticketgoapp.fragments.SignUpStep3Fragment"
         android:label="fragment_sign_up_step3"
         tools:layout="@layout/fragment_sign_up_step3" >
         <action

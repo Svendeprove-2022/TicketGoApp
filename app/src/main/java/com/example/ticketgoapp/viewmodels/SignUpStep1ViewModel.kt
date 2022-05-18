@@ -1,4 +1,4 @@
-package com.example.ticketgoapp
+package com.example.ticketgoapp.viewmodels
 
 import androidx.lifecycle.ViewModel
 

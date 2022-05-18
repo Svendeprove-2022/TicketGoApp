@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpStep3Fragment">
+    tools:context=".fragments.SignUpStep3Fragment">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/backbtn"
