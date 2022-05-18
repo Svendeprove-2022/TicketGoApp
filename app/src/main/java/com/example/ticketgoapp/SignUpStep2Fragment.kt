@@ -24,6 +24,9 @@ class SignUpStep2Fragment : Fragment() {
         binding.backbtn.setOnClickListener {
             findNavController().navigate(R.id.action_signUpStep2FragmentBackBtn)
         }
+        binding.btnContinue.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpStep2Fragment_to_signUpStep3Fragment)
+        }
 
         return binding.root
     }
