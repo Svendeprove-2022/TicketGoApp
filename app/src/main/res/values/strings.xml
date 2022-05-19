@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TicketGo</string>
 
-    <!-- Sign Up -->
+    <!-- Signup -->
     <string name="tv_sign_up_title">Create a TicketGO Account</string>
     <string name="tv_step_1">Step 1 of 3</string>
     <string name="tv_step_2">Step 2 of 3</string>
@@ -22,5 +22,10 @@
     <string name="tv_toc_label">Terms and Conditions</string>
     <string name="tv_toc_description">We use your information to provide you with our services, which we personalise based on information we hold about you and how you interact with us. Please see our <b>Privacy Policy</b> for full details. As a registered user of TicketGO, you are also subject to the <b>Terms of Use</b>.</string>
     <string name="tv_toc_required">I agree to the Terms of Use and Terms of Purchase.</string>
+
+    <!-- Login -->
+    <string name="btn_log_in">Log in</string>
+    <string name="tv_don_t_have_an_account">Don\'t have an account?</string>
+    <string name="tv_create_one_now">Create one now!</string>
 
 </resources>
