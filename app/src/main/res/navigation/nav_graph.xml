@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/signUpStep1Fragment">
+    app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/signUpStep1Fragment"
         android:name="com.example.ticketgoapp.fragments.SignUpStep1Fragment"
         android:label="fragment_sign_up_step1"
-        tools:layout="@layout/fragment_sign_up_step1" >
+        tools:layout="@layout/fragment_sign_up_step1">
         <action
             android:id="@+id/action_signUpStep1Fragment_to_signUpStep2Fragment"
             app:destination="@id/signUpStep2Fragment"
@@ -16,12 +16,17 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_signUpStep1FragmentBackBtn"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpStep2Fragment"
         android:name="com.example.ticketgoapp.fragments.SignUpStep2Fragment"
         android:label="fragment_sign_up_step2"
-        tools:layout="@layout/fragment_sign_up_step2" >
+        tools:layout="@layout/fragment_sign_up_step2">
         <action
             android:id="@+id/action_signUpStep2FragmentBackBtn"
             app:destination="@id/signUpStep1Fragment"
@@ -39,11 +44,24 @@
         android:id="@+id/signUpStep3Fragment"
         android:name="com.example.ticketgoapp.fragments.SignUpStep3Fragment"
         android:label="fragment_sign_up_step3"
-        tools:layout="@layout/fragment_sign_up_step3" >
+        tools:layout="@layout/fragment_sign_up_step3">
         <action
             android:id="@+id/action_signUpStep3FragmentBackBtn"
             app:destination="@id/signUpStep2Fragment"
             app:popUpTo="@id/signUpStep2Fragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.ticketgoapp.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpStep1Fragment"
+            app:destination="@id/signUpStep1Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>

@@ -23,6 +23,10 @@ class SignUpStep1Fragment : Fragment() {
         _binding = FragmentSignUpStep1Binding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
 
+        binding.backbtn.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpStep1FragmentBackBtn)
+        }
+
         binding.btnContinue.setOnClickListener {
             findNavController().navigate(R.id.action_signUpStep1Fragment_to_signUpStep2Fragment)
         }
