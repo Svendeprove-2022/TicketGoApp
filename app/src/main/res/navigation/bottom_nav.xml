@@ -15,5 +15,10 @@
         android:name="com.example.ticketgoapp.fragments.TicketsFragment"
         android:label="@string/title_tickets"
         tools:layout="@layout/fragment_tickets" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.ticketgoapp.fragments.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

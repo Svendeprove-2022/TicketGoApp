@@ -32,5 +32,15 @@
     <!-- Titles for BottomNavigationView -->
     <string name="title_home">Home</string>
     <string name="title_tickets">Tickets</string>
+    <string name="title_profile">Profile</string>
+
+    <!-- Profile -->
+    <string name="tv_hi_there">Hi there!</string>
+    <string name="btn_log_out">Log out</string>
+    <string name="tv_personal_information">Personal Information</string>
+    <string name="btn_edit">EDIT</string>
+    <string name="tv_email_description">Your email address is your account username, use it to log in, manage your account and receive e-tickets and ticket updates.</string>
+    <string name="btn_cancel">CANCEL</string>
+    <string name="btn_save">SAVE</string>
 
 </resources>
