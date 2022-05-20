@@ -29,7 +29,7 @@
     <string name="tv_create_one_now">Create one now!</string>
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
 
-
+    <!-- Titles for BottomNavigationView -->
     <string name="title_home">Home</string>
     <string name="title_tickets">Tickets</string>
 

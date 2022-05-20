@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
+
     <fragment
         android:id="@+id/signUpStep1Fragment"
         android:name="com.example.ticketgoapp.fragments.SignUpStep1Fragment"
@@ -63,12 +64,5 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_loginFragment_to_loggedInContainerFragment"
-            app:destination="@id/loggedInContainerFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/loggedInContainerFragment"
-        android:name="com.example.ticketgoapp.LoggedInContainerFragment"
-        android:label="LoggedInContainerFragment" />
 </navigation>
