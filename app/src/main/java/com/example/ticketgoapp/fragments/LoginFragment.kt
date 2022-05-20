@@ -32,7 +32,7 @@ class LoginFragment : Fragment() {
         binding.btnLogIn.setOnClickListener {
             val intent = Intent(activity, BottomNavigationActivity::class.java)
             startActivity(intent) // Start BottomNavigationActivity
-            activity?.finish() // Kill MainActivity so you can't backnavigate to it
+            activity?.finish() // Kill MainActivity so you can't navigate back to it
         }
 
         return binding.root
