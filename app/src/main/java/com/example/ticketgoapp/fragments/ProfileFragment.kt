@@ -1,12 +1,12 @@
 package com.example.ticketgoapp.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.ticketgoapp.viewmodels.ProfileViewModel
+import androidx.fragment.app.Fragment
 import com.example.ticketgoapp.databinding.FragmentProfileBinding
+import com.example.ticketgoapp.viewmodels.ProfileViewModel
 
 class ProfileFragment : Fragment() {
 
