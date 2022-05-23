@@ -3,26 +3,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.ticketgoapp.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/signUpStep1Fragment"
+        android:name="com.example.ticketgoapp.fragments.SignUpStep1Fragment"
+        android:label="fragment_sign_up_step1"
+        tools:layout="@layout/fragment_sign_up_step1">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_signUpStep1Fragment_to_signUpStep2Fragment"
+            app:destination="@id/signUpStep2Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_signUpStep1FragmentBackBtn"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.ticketgoapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/signUpStep2Fragment"
+        android:name="com.example.ticketgoapp.fragments.SignUpStep2Fragment"
+        android:label="fragment_sign_up_step2"
+        tools:layout="@layout/fragment_sign_up_step2">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_signUpStep2FragmentBackBtn"
+            app:destination="@id/signUpStep1Fragment"
+            app:popUpTo="@id/signUpStep1Fragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpStep2Fragment_to_signUpStep3Fragment"
+            app:destination="@id/signUpStep3Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpStep3Fragment"
+        android:name="com.example.ticketgoapp.fragments.SignUpStep3Fragment"
+        android:label="fragment_sign_up_step3"
+        tools:layout="@layout/fragment_sign_up_step3">
+        <action
+            android:id="@+id/action_signUpStep3FragmentBackBtn"
+            app:destination="@id/signUpStep2Fragment"
+            app:popUpTo="@id/signUpStep2Fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.ticketgoapp.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpStep1Fragment"
+            app:destination="@id/signUpStep1Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>
