@@ -5,14 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ticketgoapp.R
 import com.example.ticketgoapp.databinding.FragmentSignUpStep3Binding
 import com.example.ticketgoapp.viewmodels.SignUpStep3ViewModel
+import com.example.ticketgoapp.viewmodels.SignUpViewModel
 
 class SignUpStep3Fragment : Fragment() {
 
-    private lateinit var viewModel: SignUpStep3ViewModel
+    private val viewModel: SignUpViewModel by activityViewModels()
     private var _binding: FragmentSignUpStep3Binding? = null
     private val binding get() = _binding!!
 
@@ -25,6 +27,12 @@ class SignUpStep3Fragment : Fragment() {
 
         binding.backbtn.setOnClickListener {
             findNavController().navigate(R.id.action_signUpStep3FragmentBackBtn)
+        }
+
+        binding.btnCreate.setOnClickListener{
+            viewModel.createUser()
+            viewModel.updateUser()
+            // TODO - Navigate
         }
 
         return binding.root
