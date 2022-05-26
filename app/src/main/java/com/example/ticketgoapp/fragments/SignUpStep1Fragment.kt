@@ -5,14 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ticketgoapp.R
 import com.example.ticketgoapp.databinding.FragmentSignUpStep1Binding
 import com.example.ticketgoapp.viewmodels.SignUpStep1ViewModel
+import com.example.ticketgoapp.viewmodels.SignUpViewModel
 
 class SignUpStep1Fragment : Fragment() {
 
-    private lateinit var viewModel: SignUpStep1ViewModel
+    private val viewModel: SignUpViewModel by activityViewModels()
     private var _binding: FragmentSignUpStep1Binding? = null
     private val binding get() = _binding!!
 
@@ -28,6 +30,12 @@ class SignUpStep1Fragment : Fragment() {
         }
 
         binding.btnContinue.setOnClickListener {
+            viewModel.save1(
+                binding.emailaddressInput.text.toString(),
+                binding.passwordInput.text.toString(),
+                binding.firstnameInput.text.toString(),
+                binding.lastnameInput.text.toString()
+            )
             findNavController().navigate(R.id.action_signUpStep1Fragment_to_signUpStep2Fragment)
         }
 
