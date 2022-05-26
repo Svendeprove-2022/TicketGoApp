@@ -30,25 +30,25 @@ class SignUpViewModel : ViewModel() {
     fun updateUser() {
         viewModelScope.launch(Dispatchers.IO) {
             val mutationData = UpdateUserMutation(
-                user._id!!,
-                user.first_name!!
-//                user.city!!,
-//                user.country!!,
-//                user.first_name!!,
-//                user.last_name!!,
-//                user.mobile!!,
-//                user.zip_code!!
+                user._id.toString(),
+                user.first_name.toString(),
+                user.city.toString(),
+                user.country.toString(),
+                user.first_name.toString(),
+                user.last_name.toString(),
+                user.mobile.toString(),
+                user.zip_code.toString()
             )
 
             Log.d("userid", user._id.toString())
             Log.d("mutation data", mutationData.userId.toString())
-//            Log.d("mutation data", mutationData.address.toString())
-//            Log.d("mutation data", mutationData.city.toString())
-//            Log.d("mutation data", mutationData.country.toString())
+            Log.d("mutation data", mutationData.address.toString())
+            Log.d("mutation data", mutationData.city.toString())
+            Log.d("mutation data", mutationData.country.toString())
             Log.d("mutation data", mutationData.firstName.toString())
-//            Log.d("mutation data", mutationData.last_name.toString())
-//            Log.d("mutation data", mutationData.mobile.toString())
-//            Log.d("mutation data", mutationData.zip_code.toString())
+            Log.d("mutation data", mutationData.lastName.toString())
+            Log.d("mutation data", mutationData.mobile.toString())
+            Log.d("mutation data", mutationData.zip_code.toString())
 
             try {
                 val response = apolloClient().mutation(mutationData).execute()
@@ -67,7 +67,6 @@ class SignUpViewModel : ViewModel() {
     }
 
     fun save2(phone: String, address: String, postcode: String, city: String, country: String) {
-        user._id = ObjectId()
         user.mobile = phone
         user.address = address
         user.zip_code = postcode
@@ -102,6 +101,7 @@ class SignUpViewModel : ViewModel() {
             if (it.isSuccess) {
                 Log.d("realm", "Login Successful")
                 UserToken.setToken(ticketGoApp.currentUser()!!.accessToken)
+                user._id = ObjectId(ticketGoApp.currentUser()!!.id)
             } else {
                 Log.d("realm", "Login Error: ${it.error}")
             }
