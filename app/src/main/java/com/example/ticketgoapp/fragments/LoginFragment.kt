@@ -31,8 +31,10 @@ class LoginFragment : Fragment() {
         }
 
         binding.btnLogIn.setOnClickListener {
-
-            viewModel.loginUser(binding.emailaddressInput.text.toString(), binding.passwordInput.text.toString())
+            viewModel.loginUser(
+                binding.emailaddressInput.text.toString(),
+                binding.passwordInput.text.toString()
+            )
 
             val intent = Intent(activity, BottomNavigationActivity::class.java)
             startActivity(intent) // Start BottomNavigationActivity

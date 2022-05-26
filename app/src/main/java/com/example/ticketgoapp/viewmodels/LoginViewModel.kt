@@ -3,7 +3,7 @@ package com.example.ticketgoapp.viewmodels
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.ticketgoapp.models.UserToken
-import com.example.ticketgoapp.ticketGoApp
+import com.example.ticketgoapp.realm.ticketGoApp
 import io.realm.mongodb.Credentials
 
 class LoginViewModel : ViewModel() {
