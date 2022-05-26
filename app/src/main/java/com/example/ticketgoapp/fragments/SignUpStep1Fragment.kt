@@ -9,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ticketgoapp.R
 import com.example.ticketgoapp.databinding.FragmentSignUpStep1Binding
-import com.example.ticketgoapp.viewmodels.SignUpStep1ViewModel
 import com.example.ticketgoapp.viewmodels.SignUpViewModel
 
 class SignUpStep1Fragment : Fragment() {
