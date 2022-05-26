@@ -4,6 +4,9 @@ plugins {
     id("com.apollographql.apollo3").version("3.3.0")
 }
 
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+
 android {
     compileSdk 32
 
@@ -18,7 +21,12 @@ android {
     }
 
     buildTypes {
+        def appId = "ticketgo-uttab" // Realm App ID
+        debug {
+            buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
+        }
         release {
+            buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -52,8 +60,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation("com.apollographql.apollo3:apollo-runtime:3.3.0")
+
+    implementation 'io.realm:realm-gradle-plugin:10.11.0'
 }
 
 apollo {
     packageName.set("com.example.ticketgoapp")
+}
+
+realm {
+    syncEnabled = true
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">https://eu-central-1.aws.realm.mongodb.com/api/client/v2.0/app/ticketgo-uttab/graphql</domain>
+    </domain-config>
+</network-security-config>
