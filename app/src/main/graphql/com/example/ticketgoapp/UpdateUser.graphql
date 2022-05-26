@@ -1,0 +1,10 @@
+mutation updateUser(
+    $userId: ObjectId!,
+    $firstName: String!){
+    updateOneUser(
+        query:{_id:$userId},
+        set:{first_name:$firstName}){
+        _id
+        first_name
+    }
+}
