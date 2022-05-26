@@ -22,10 +22,6 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        binding.btnGet.setOnClickListener {
-            viewModel.getData()
-        }
-
         return binding.root
     }
 
