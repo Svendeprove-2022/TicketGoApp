@@ -1,10 +1,24 @@
-mutation updateUser(
+mutation UpdateUser(
     $userId: ObjectId!,
-    $firstName: String!){
+    $address: String!,
+    $city: String!,
+    $country: String!,
+    $firstName: String!,
+    $lastName: String!,
+    $mobile: String!,
+    $zip_code: String!) {
     updateOneUser(
-        query:{_id:$userId},
-        set:{first_name:$firstName}){
+        query: {_id: $userId}
+        set: {address: $address, city: $city, country: $country, first_name: $firstName, last_name: $lastName, mobile: $mobile, zip_code: $zip_code}
+    ) {
         _id
+        email
+        address
+        city
+        country
         first_name
+        last_name
+        mobile
+        zip_code
     }
 }
