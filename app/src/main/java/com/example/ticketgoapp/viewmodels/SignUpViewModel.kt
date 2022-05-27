@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.apollographql.apollo3.exception.ApolloException
-import com.example.ticketgoapp.UpdateUserMutation
+import com.example.ticketgoapp.UpdateOneUserMutation
 import com.example.ticketgoapp.apollo.apolloClient
 import com.example.ticketgoapp.models.User
 import com.example.ticketgoapp.models.UserToken
@@ -21,7 +21,7 @@ class SignUpViewModel : ViewModel() {
 
     fun updateUser() {
         viewModelScope.launch(Dispatchers.IO) {
-            val mutationData = UpdateUserMutation(
+            val mutationData = UpdateOneUserMutation(
                 user._id.toString(),
                 user.address.toString(),
                 user.city.toString(),

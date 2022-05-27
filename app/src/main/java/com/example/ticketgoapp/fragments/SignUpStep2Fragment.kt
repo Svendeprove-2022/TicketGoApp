@@ -31,7 +31,7 @@ class SignUpStep2Fragment : Fragment() {
             viewModel.save2(
                 binding.phonenumberInput.text.toString(),
                 binding.addressInput.text.toString(),
-                binding.postcodeInput.text.toString(),
+                binding.zipcodeInput.text.toString(),
                 binding.cityInput.text.toString(),
                 binding.countryInput.text.toString()
             )

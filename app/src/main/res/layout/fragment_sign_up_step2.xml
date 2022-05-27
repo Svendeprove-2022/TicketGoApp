@@ -90,17 +90,17 @@
         app:layout_constraintTop_toBottomOf="@+id/addressLabel" />
 
     <TextView
-        android:id="@+id/postcodeLabel"
+        android:id="@+id/zipcodeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="@string/tv_post_code"
+        android:text="@string/tv_zip_code"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addressInput" />
 
     <EditText
-        android:id="@+id/postcodeInput"
+        android:id="@+id/zipcodeInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -110,7 +110,7 @@
         android:inputType="textPostalAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postcodeLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/zipcodeLabel" />
 
     <TextView
         android:id="@+id/cityLabel"
@@ -120,7 +120,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/tv_city"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postcodeInput" />
+        app:layout_constraintTop_toBottomOf="@+id/zipcodeInput" />
 
     <EditText
         android:id="@+id/cityInput"
