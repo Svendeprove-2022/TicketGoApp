@@ -23,7 +23,7 @@ class SignUpViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             val mutationData = UpdateUserMutation(
                 user._id.toString(),
-                user.first_name.toString(),
+                user.address.toString(),
                 user.city.toString(),
                 user.country.toString(),
                 user.first_name.toString(),
@@ -35,8 +35,10 @@ class SignUpViewModel : ViewModel() {
             try {
                 val response = apolloClient().mutation(mutationData).execute()
                 Log.d("response", response.data?.updateOneUser.toString())
+                logoutUser()
             } catch (e: ApolloException) {
                 Log.d("apollo", "exception: $e")
+                logoutUser()
             }
         }
     }
@@ -66,10 +68,15 @@ class SignUpViewModel : ViewModel() {
         }
     }
 
+    fun logoutUser() {
+        ticketGoApp.removeUser(ticketGoApp.currentUser())
+    }
+
     fun loginUser() {
         val creds = Credentials.emailPassword(user.email!!, password)
         Log.d("realm email", user.email.toString())
         Log.d("realm password", password)
+
         ticketGoApp.loginAsync(creds) {
             if (it.isSuccess) {
                 Log.d("realm", "Login Successful")
