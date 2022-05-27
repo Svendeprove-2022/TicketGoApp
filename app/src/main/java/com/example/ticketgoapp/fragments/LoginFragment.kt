@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -30,15 +31,26 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_signUpStep1Fragment)
         }
 
-        binding.btnLogIn.setOnClickListener {
-            viewModel.loginUser(
-                binding.emailaddressInput.text.toString(),
-                binding.passwordInput.text.toString()
-            )
+        viewModel.loginReponse.observe(viewLifecycleOwner) {
+            if (it) {
+                val intent = Intent(activity, BottomNavigationActivity::class.java)
+                startActivity(intent) // Start BottomNavigationActivity
+                activity?.finish() // Kill MainActivity so you can't navigate back to it
+            } else {
+                Toast.makeText(context, "Email or password was incorrect", Toast.LENGTH_LONG)
+                    .show()
+            }
+        }
 
-            val intent = Intent(activity, BottomNavigationActivity::class.java)
-            startActivity(intent) // Start BottomNavigationActivity
-            activity?.finish() // Kill MainActivity so you can't navigate back to it
+        binding.btnLogIn.setOnClickListener {
+            if (binding.emailaddressInput.text.isNotBlank() && binding.passwordInput.text.isNotBlank()) {
+                viewModel.loginUser(
+                    binding.emailaddressInput.text.toString(),
+                    binding.passwordInput.text.toString()
+                )
+            } else {
+                Toast.makeText(context, "Please enter email and password", Toast.LENGTH_LONG).show()
+            }
         }
 
         return binding.root
