@@ -38,12 +38,11 @@ class SignUpStep3Fragment : Fragment() {
         binding.btnCreate.setOnClickListener {
             if (binding.checkbox.isChecked) {
                 viewModel.updateUser()
+                findNavController().navigate(R.id.action_signUpStep3Fragment_to_loginFragment)
             } else {
                 Toast.makeText(context, "You must accept the terms first.", Toast.LENGTH_LONG)
                     .show()
             }
-
-            // NAVIGATE
         }
 
         return binding.root
