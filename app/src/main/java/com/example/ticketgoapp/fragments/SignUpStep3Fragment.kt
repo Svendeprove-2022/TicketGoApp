@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -35,7 +36,12 @@ class SignUpStep3Fragment : Fragment() {
         }
 
         binding.btnCreate.setOnClickListener {
-            viewModel.updateUser()
+            if (binding.checkbox.isChecked) {
+                viewModel.updateUser()
+            } else {
+                Toast.makeText(context, "You must accept the terms first.", Toast.LENGTH_LONG)
+                    .show()
+            }
 
             // NAVIGATE
         }
