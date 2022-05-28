@@ -42,5 +42,6 @@
     <string name="btn_save">SAVE</string>
     <string name="btn_cancel">CANCEL</string>
     <string name="btn_edit">EDIT</string>
+    <string name="iv_event_picture_description">Event Picture</string>
 
 </resources>
