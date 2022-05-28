@@ -1,0 +1,31 @@
+query GetUsersTickets($userId: ObjectId!) {
+    orders(query: {user: $userId}) {
+        _id
+        tickets {
+            _id
+            section {
+                _id
+                name
+                event {
+                    name
+                    images
+                    dates {
+                        end
+                        entry
+                        span
+                        start
+                    }
+                    venue {
+                        _id
+                        address
+                        city
+                        country
+                        name
+                        url
+                        zip_code
+                    }
+                }
+            }
+        }
+    }
+}
