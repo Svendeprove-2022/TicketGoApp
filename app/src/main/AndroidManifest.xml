@@ -17,7 +17,8 @@
         <activity
             android:name=".BottomNavigationActivity"
             android:exported="false"
-            android:label="@string/title_activity_bottom_navigation" />
+            android:label="@string/title_activity_bottom_navigation"
+            android:theme="@style/Theme.TicketGoApp" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
