@@ -13,7 +13,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_icon_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TicketGoApp">
+        android:theme="@style/Theme.App.Starting">
         <activity
             android:name=".BottomNavigationActivity"
             android:exported="false"
@@ -21,7 +21,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.TicketGoApp.NoActionBar">
+            android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
