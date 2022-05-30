@@ -1,5 +1,6 @@
 package com.example.ticketgoapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.ticketgoapp.MainActivity
 import com.example.ticketgoapp.R
 import com.example.ticketgoapp.databinding.FragmentProfileBinding
 import com.example.ticketgoapp.viewmodels.ProfileViewModel
@@ -29,6 +31,14 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnLogOut.setOnClickListener {
+            viewModel.logOutUser()
+
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent) // Start MainActivity
+            activity?.finish() // Kill BottomNavigationActivity so you can't navigate back to it
+        }
 
         viewModel.getUserData().observe(viewLifecycleOwner) {
             Log.d("response", it.data.toString())

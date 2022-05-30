@@ -68,8 +68,8 @@ class SignUpViewModel : ViewModel() {
         }
     }
 
-    fun logoutUser() {
-        ticketGoApp.removeUser(ticketGoApp.currentUser())
+    private fun logoutUser() {
+        ticketGoApp.currentUser()!!.logOut()
     }
 
     fun loginUser() {
