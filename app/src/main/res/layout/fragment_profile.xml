@@ -24,8 +24,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/topLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/material_dynamic_neutral_variant40">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/tv_hello_label"
@@ -69,8 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="@color/material_dynamic_neutral_variant70">
+                android:layout_marginEnd="8dp">
 
                 <TextView
                     android:id="@+id/info_label"
@@ -111,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="@color/white"
                     android:enabled="false"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
@@ -136,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="@color/white"
                     android:enabled="false"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
@@ -161,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="@color/white"
                     android:enabled="false"
                     android:importantForAutofill="no"
                     android:inputType="textEmailAddress"
@@ -186,7 +184,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="@color/white"
                     android:enabled="false"
                     android:importantForAutofill="no"
                     android:inputType="phone"
@@ -211,7 +209,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="@color/white"
                     android:enabled="false"
                     android:importantForAutofill="no"
                     android:inputType="textPostalAddress"
@@ -236,7 +234,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="@color/white"
                     android:enabled="false"
                     android:importantForAutofill="no"
                     android:inputType="textPostalAddress"
@@ -261,7 +259,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="@color/white"
                     android:enabled="false"
                     android:importantForAutofill="no"
                     android:inputType="textPostalAddress"
@@ -287,7 +285,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="16dp"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="@color/white"
                     android:enabled="false"
                     android:importantForAutofill="no"
                     android:inputType="textPostalAddress"
@@ -297,8 +295,6 @@
                     tools:text="Danmark" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
