@@ -1,4 +1,4 @@
-package com.example.ticketgoapp
+package com.example.ticketgoapp.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.apollographql.apollo3.api.ApolloResponse
 import com.apollographql.apollo3.exception.ApolloException
+import com.example.ticketgoapp.GetUsersTicketsQuery
 import com.example.ticketgoapp.apollo.apolloClient
 import com.example.ticketgoapp.realm.ticketGoApp
 import kotlinx.coroutines.launch

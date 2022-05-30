@@ -7,7 +7,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/ticketsList"
-        android:name="com.example.ticketgoapp.ItemTicketsFragment"
+        android:name="com.example.ticketgoapp.fragments.ItemTicketsRecyclerViewFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_item_ticket_recyclerview" />

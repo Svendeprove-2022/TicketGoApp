@@ -1,8 +1,9 @@
-package com.example.ticketgoapp
+package com.example.ticketgoapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ticketgoapp.GetUsersTicketsQuery
 import com.example.ticketgoapp.databinding.FragmentItemTicketBinding
 import com.squareup.picasso.Picasso
 import java.time.LocalDateTime
