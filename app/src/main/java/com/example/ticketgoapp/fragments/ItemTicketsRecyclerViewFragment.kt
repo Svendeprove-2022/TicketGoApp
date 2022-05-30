@@ -14,11 +14,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ticketgoapp.GetUsersTicketsQuery
 import com.example.ticketgoapp.R
 import com.example.ticketgoapp.adapters.ItemTicketsRecyclerViewAdapter
+import com.example.ticketgoapp.viewmodels.QRViewModel
 import com.example.ticketgoapp.viewmodels.TicketsRecyclerViewViewModel
 
 class ItemTicketsRecyclerViewFragment : Fragment() {
 
     private val viewModel: TicketsRecyclerViewViewModel by viewModels()
+    private val qrViewModel: QRViewModel by viewModels()
     private lateinit var recyclerViewAdapter: ItemTicketsRecyclerViewAdapter
     private var columnCount = 1
     private var tickets = mutableListOf<GetUsersTicketsQuery.Ticket?>()
@@ -53,7 +55,8 @@ class ItemTicketsRecyclerViewFragment : Fragment() {
                                 }
 
                                 Log.d("rv", "adding items to adapter")
-                                recyclerViewAdapter = ItemTicketsRecyclerViewAdapter(tickets)
+                                recyclerViewAdapter =
+                                    ItemTicketsRecyclerViewAdapter(tickets, context, qrViewModel)
                                 adapter = recyclerViewAdapter
 
                             } else {

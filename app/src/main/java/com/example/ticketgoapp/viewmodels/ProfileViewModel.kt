@@ -16,6 +16,12 @@ import kotlinx.coroutines.launch
 
 class ProfileViewModel : ViewModel() {
 
+    fun logOutUser() {
+        viewModelScope.launch(Dispatchers.IO) {
+            ticketGoApp.currentUser()!!.logOut()
+        }
+    }
+
     fun getUserData(): LiveData<ApolloResponse<GetDataFromOneUserQuery.Data>> {
         val response = MutableLiveData<ApolloResponse<GetDataFromOneUserQuery.Data>>()
 
