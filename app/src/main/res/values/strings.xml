@@ -27,7 +27,6 @@
     <string name="btn_log_in">Log in</string>
     <string name="tv_don_t_have_an_account">Don\'t have an account?</string>
     <string name="tv_create_one_now">Create one now!</string>
-    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
 
     <!-- Titles for BottomNavigationView -->
     <string name="title_home">Home</string>
@@ -42,6 +41,8 @@
     <string name="btn_save">SAVE</string>
     <string name="btn_cancel">CANCEL</string>
     <string name="btn_edit">EDIT</string>
+
+    <!-- Tickets -->
     <string name="iv_event_picture_description">Event Picture</string>
 
 </resources>
