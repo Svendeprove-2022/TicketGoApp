@@ -27,7 +27,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/tv_sign_up_title"
-        android:textColor="?attr/colorOnSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +47,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="@string/tv_toc_label"
-        android:textColor="?attr/colorOnSecondary"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,8 +82,7 @@
             android:id="@+id/toc_required"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tv_toc_required"
-            android:textColor="?attr/colorOnSecondary" />
+            android:text="@string/tv_toc_required" />
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton

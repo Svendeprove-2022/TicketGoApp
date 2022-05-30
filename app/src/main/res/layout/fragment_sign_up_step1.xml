@@ -27,7 +27,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/tv_sign_up_title"
-        android:textColor="?attr/colorOnSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
