@@ -1,9 +1,11 @@
 package com.example.ticketgoapp.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.ticketgoapp.R
@@ -22,16 +24,27 @@ class ProfileFragment : Fragment() {
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         viewModel.getUserData().observe(viewLifecycleOwner) {
-            binding.tvHelloUser.text = it.data?.user?.first_name
-            binding.firstnameInput.setText(it.data?.user?.first_name)
-            binding.lastnameInput.setText(it.data?.user?.last_name)
-            binding.emailaddressInput.setText(it.data?.user?.email)
-            binding.phonenumberInput.setText(it.data?.user?.mobile)
-            binding.addressInput.setText(it.data?.user?.address)
-            binding.zipcodeInput.setText(it.data?.user?.zip_code)
-            binding.cityInput.setText(it.data?.user?.city)
-            binding.countryInput.setText(it.data?.user?.country)
+            Log.d("response", it.data.toString())
+            if (it.data?.user != null) {
+                binding.tvHelloUser.text = it.data?.user?.first_name
+                binding.firstnameInput.setText(it.data?.user?.first_name)
+                binding.lastnameInput.setText(it.data?.user?.last_name)
+                binding.emailaddressInput.setText(it.data?.user?.email)
+                binding.phonenumberInput.setText(it.data?.user?.mobile)
+                binding.addressInput.setText(it.data?.user?.address)
+                binding.zipcodeInput.setText(it.data?.user?.zip_code)
+                binding.cityInput.setText(it.data?.user?.city)
+                binding.countryInput.setText(it.data?.user?.country)
+            } else {
+                Toast.makeText(context, "Couln't retrieve user info", Toast.LENGTH_LONG).show()
+            }
         }
 
         var clicked = 0
@@ -67,10 +80,7 @@ class ProfileFragment : Fragment() {
                     binding.zipcodeInput.text.toString()
                 )
             }
-
         }
-
-        return binding.root
     }
 
 }
