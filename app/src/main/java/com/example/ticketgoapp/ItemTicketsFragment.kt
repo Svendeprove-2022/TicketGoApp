@@ -2,9 +2,13 @@ package com.example.ticketgoapp
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -32,25 +36,36 @@ class ItemTicketsFragment : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
 
+                adapter = null
+
                 viewModel.getUserTickets().observe(viewLifecycleOwner) {
                     try {
-                        for (item in it.data?.orders!!) {
-                            if (item != null) {
-                                tickets += item.tickets!!
+                        if (!it.hasErrors()) { // No errors found in reseponse
+                            if (!it.data?.orders?.isEmpty()!!) { // Tickets found in orders
+                                for (item in it.data?.orders!!) {
+                                    if (item != null) {
+                                        tickets += item.tickets!!
+                                    } else {
+                                        adapter = null
+                                        break
+                                    }
+                                }
+
+                                Log.d("rv", "adding items to adapter")
+                                recyclerViewAdapter = ItemTicketsRecyclerViewAdapter(tickets)
+                                adapter = recyclerViewAdapter
+
+                            } else {
+                                Log.d("rv", "orders is empty")
                             }
-//                            tickets = it.data?.orders?.get(0)?.tickets!!
+                        } else {
+                            Log.d("rv", it.errors.toString())
+                            Toast.makeText(context, it.errors.toString(), Toast.LENGTH_LONG).show()
                         }
 
-                        if (!it.hasErrors()) {
-                            recyclerViewAdapter = ItemTicketsRecyclerViewAdapter(tickets)
-                            adapter = recyclerViewAdapter
-                        } else {
-                            adapter = null
-                        }
                     } catch (e: Exception) {
                         Log.d("tickets error", e.message.toString())
                     }
-
                 }
             }
         }
