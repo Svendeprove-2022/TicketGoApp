@@ -1,5 +1,5 @@
 query GetUsersTickets($userId: ObjectId!) {
-    orders(query: {user: $userId}) {
+    orders(query: {user: {_id: $userId}}) {
         _id
         tickets {
             _id
