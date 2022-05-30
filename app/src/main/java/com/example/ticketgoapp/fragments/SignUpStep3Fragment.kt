@@ -4,15 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ticketgoapp.R
 import com.example.ticketgoapp.databinding.FragmentSignUpStep3Binding
-import com.example.ticketgoapp.viewmodels.SignUpStep3ViewModel
+import com.example.ticketgoapp.viewmodels.SignUpViewModel
 
 class SignUpStep3Fragment : Fragment() {
 
-    private lateinit var viewModel: SignUpStep3ViewModel
+    private val viewModel: SignUpViewModel by activityViewModels()
     private var _binding: FragmentSignUpStep3Binding? = null
     private val binding get() = _binding!!
 
@@ -27,7 +29,22 @@ class SignUpStep3Fragment : Fragment() {
             findNavController().navigate(R.id.action_signUpStep3FragmentBackBtn)
         }
 
+        viewModel.registerUser()
+
+        binding.btnCreate2.setOnClickListener {
+            viewModel.loginUser()
+        }
+
+        binding.btnCreate.setOnClickListener {
+            if (binding.checkbox.isChecked) {
+                viewModel.updateUser()
+                findNavController().navigate(R.id.action_signUpStep3Fragment_to_loginFragment)
+            } else {
+                Toast.makeText(context, "You must accept the terms first.", Toast.LENGTH_LONG)
+                    .show()
+            }
+        }
+
         return binding.root
     }
-
 }
