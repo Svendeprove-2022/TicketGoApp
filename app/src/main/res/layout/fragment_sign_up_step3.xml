@@ -17,7 +17,7 @@
         app:iconGravity="start"
         app:iconTint="?attr/colorOnSecondary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title"
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:textColor="?attr/colorOnSecondary"
         android:text="@string/tv_sign_up_title"
+        android:textColor="?attr/colorOnSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:textColor="?attr/colorOnSecondary"
         android:text="@string/tv_toc_label"
+        android:textColor="?attr/colorOnSecondary"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,9 +83,9 @@
         <TextView
             android:id="@+id/toc_required"
             android:layout_width="wrap_content"
-            android:textColor="?attr/colorOnSecondary"
             android:layout_height="wrap_content"
-            android:text="@string/tv_toc_required" />
+            android:text="@string/tv_toc_required"
+            android:textColor="?attr/colorOnSecondary" />
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
