@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TicketGo</string>
+    <string name="app_name">TicketGO</string>
 
     <!-- Signup -->
     <string name="tv_sign_up_title">Create a TicketGO Account</string>
@@ -22,12 +22,10 @@
     <string name="tv_toc_required">I agree to the Terms of Use and Terms of Purchase.</string>
 
     <!-- Login -->
-
     <string name="tv_don_t_have_an_account">Don\'t have an account?</string>
     <string name="tv_create_one_now">Create one now!</string>
 
     <!-- Titles for BottomNavigationView -->
-    <string name="title_home">Home</string>
     <string name="title_tickets">Tickets</string>
     <string name="title_profile">Profile</string>
 
@@ -46,7 +44,7 @@
     <string name="btn_cancel">Cancel</string>
     <string name="btn_edit">Edit</string>
     <string name="btn_continue">Continue</string>
-    <string name="btn_ok">Ok</string>
+    <string name="btn_ok">OK</string>
     <string name="btn_log_in">Log in</string>
     <string name="btn_create_an_account">Create an account</string>
 
