@@ -33,6 +33,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="@string/tv_hi_there"
+                    android:textColor="?attr/colorOnSecondary"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +45,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
+                    android:textColor="?attr/colorOnSecondary"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +79,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/tv_personal_information"
+                    android:textColor="?attr/colorOnSecondary"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -102,6 +105,7 @@
                     android:layout_marginTop="24dp"
                     android:labelFor="@+id/firstnameInput"
                     android:text="@string/tv_first_name"
+                    android:textColor="?attr/colorOnSecondary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/info_label" />
 
@@ -126,6 +130,7 @@
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/lastnameInput"
                     android:text="@string/tv_last_name"
+                    android:textColor="?attr/colorOnSecondary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/firstnameInput" />
 
@@ -150,6 +155,7 @@
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/emailaddressInput"
                     android:text="@string/tv_email_address"
+                    android:textColor="?attr/colorOnSecondary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lastnameInput" />
 
@@ -174,6 +180,7 @@
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/phonenumberInput"
                     android:text="@string/tv_phone_number"
+                    android:textColor="?attr/colorOnSecondary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/emailaddressInput" />
 
@@ -198,6 +205,7 @@
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/addressInput"
                     android:text="@string/tv_address"
+                    android:textColor="?attr/colorOnSecondary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/phonenumberInput" />
 
@@ -222,6 +230,7 @@
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/zipcodeInput"
                     android:text="@string/tv_zip_code"
+                    android:textColor="?attr/colorOnSecondary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/addressInput" />
 
@@ -246,6 +255,7 @@
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/cityInput"
                     android:text="@string/tv_city"
+                    android:textColor="?attr/colorOnSecondary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/zipcodeInput" />
 
@@ -270,6 +280,7 @@
                     android:layout_marginTop="16dp"
                     android:labelFor="@id/countryInput"
                     android:text="@string/tv_country"
+                    android:textColor="?attr/colorOnSecondary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cityInput" />
 
