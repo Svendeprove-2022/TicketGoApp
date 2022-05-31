@@ -25,7 +25,7 @@ class ProfileViewModel : ViewModel() {
     fun getUserData(): LiveData<ApolloResponse<GetDataFromOneUserQuery.Data>> {
         val response = MutableLiveData<ApolloResponse<GetDataFromOneUserQuery.Data>>()
 
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 response.postValue(
                     apolloClient().query(GetDataFromOneUserQuery(ticketGoApp.currentUser()!!.id))

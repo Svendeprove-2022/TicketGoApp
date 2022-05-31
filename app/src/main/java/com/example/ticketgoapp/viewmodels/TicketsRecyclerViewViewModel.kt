@@ -10,6 +10,7 @@ import com.apollographql.apollo3.exception.ApolloException
 import com.example.ticketgoapp.GetUsersTicketsQuery
 import com.example.ticketgoapp.apollo.apolloClient
 import com.example.ticketgoapp.realm.ticketGoApp
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class TicketsRecyclerViewViewModel : ViewModel() {
@@ -17,7 +18,7 @@ class TicketsRecyclerViewViewModel : ViewModel() {
     fun getUserTickets(): LiveData<ApolloResponse<GetUsersTicketsQuery.Data>> {
         val response = MutableLiveData<ApolloResponse<GetUsersTicketsQuery.Data>>()
 
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 response.postValue(
                     apolloClient().query(GetUsersTicketsQuery(ticketGoApp.currentUser()!!.id))
