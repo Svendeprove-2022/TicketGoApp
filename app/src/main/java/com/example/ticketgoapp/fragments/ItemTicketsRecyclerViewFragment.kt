@@ -77,4 +77,9 @@ class ItemTicketsRecyclerViewFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        tickets = mutableListOf()
+    }
 }
