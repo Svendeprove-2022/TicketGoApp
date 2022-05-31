@@ -1,14 +1,16 @@
 package com.example.ticketgoapp.viewmodels
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.apollographql.apollo3.exception.ApolloException
+import com.apollographql.apollo3.api.ApolloResponse
 import com.example.ticketgoapp.UpdateOneUserMutation
 import com.example.ticketgoapp.apollo.apolloClient
 import com.example.ticketgoapp.models.User
 import com.example.ticketgoapp.models.UserToken
 import com.example.ticketgoapp.realm.ticketGoApp
+import io.realm.mongodb.App
 import io.realm.mongodb.Credentials
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,29 +21,10 @@ class SignUpViewModel : ViewModel() {
     private var user: User = User()
     private lateinit var password: String
 
-    fun updateUser() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val mutationData = UpdateOneUserMutation(
-                user._id.toString(),
-                user.address.toString(),
-                user.city.toString(),
-                user.country.toString(),
-                user.first_name.toString(),
-                user.last_name.toString(),
-                user.mobile.toString(),
-                user.zip_code.toString()
-            )
-
-            try {
-                val response = apolloClient().mutation(mutationData).execute()
-                Log.d("response", response.data?.updateOneUser.toString())
-                logoutUser()
-            } catch (e: ApolloException) {
-                Log.d("apollo", "exception: $e")
-                logoutUser()
-            }
-        }
-    }
+    val registerResponse: MutableLiveData<App.Result<Void>> = MutableLiveData()
+    val loginResponse: MutableLiveData<App.Result<io.realm.mongodb.User>> = MutableLiveData()
+    val updateResponse: MutableLiveData<ApolloResponse<UpdateOneUserMutation.Data>> =
+        MutableLiveData()
 
     fun save1(email: String, password: String, firstName: String, lastName: String) {
         user.email = email
@@ -60,11 +43,41 @@ class SignUpViewModel : ViewModel() {
 
     fun registerUser() {
         ticketGoApp.emailPassword.registerUserAsync(user.email!!, password) {
+            registerResponse.postValue(it)
+        }
+    }
+
+    fun logInUser() {
+        val creds = Credentials.emailPassword(user.email!!, password)
+        Log.d("createflow", user.email.toString())
+        Log.d("createflow", password)
+
+        ticketGoApp.loginAsync(creds) {
+            Log.d("createflow login", it.toString())
             if (it.isSuccess) {
-                Log.d("realm", "Registered user")
-            } else {
-                Log.d("realm", "Register Error: ${it.error}")
+                UserToken.setToken(ticketGoApp.currentUser()!!.accessToken)
+                user._id = ObjectId(ticketGoApp.currentUser()!!.id)
             }
+            loginResponse.postValue(it)
+        }
+    }
+
+    fun updateUser() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val mutationData = UpdateOneUserMutation(
+                user._id.toString(),
+                user.address.toString(),
+                user.city.toString(),
+                user.country.toString(),
+                user.first_name.toString(),
+                user.last_name.toString(),
+                user.mobile.toString(),
+                user.zip_code.toString()
+            )
+
+            val response = apolloClient().mutation(mutationData).execute()
+            updateResponse.postValue(response)
+            logoutUser()
         }
     }
 
@@ -72,23 +85,4 @@ class SignUpViewModel : ViewModel() {
         ticketGoApp.currentUser()!!.logOut()
     }
 
-    fun loginUser() {
-        val creds = Credentials.emailPassword(user.email!!, password)
-        Log.d("realm email", user.email.toString())
-        Log.d("realm password", password)
-
-        ticketGoApp.loginAsync(creds) {
-            if (it.isSuccess) {
-                Log.d("realm", "Login Successful")
-                UserToken.setToken(ticketGoApp.currentUser()!!.accessToken)
-                user._id = ObjectId(ticketGoApp.currentUser()!!.id)
-            } else {
-                Log.d("realm", "Login Error: ${it.error}")
-            }
-        }
-    }
-
 }
-
-
-
