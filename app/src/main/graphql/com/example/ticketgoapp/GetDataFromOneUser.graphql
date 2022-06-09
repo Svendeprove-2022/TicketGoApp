@@ -1,0 +1,13 @@
+query GetDataFromOneUser($userId: ObjectId!) {
+    user(query: {_id: $userId}) {
+        _id
+        email
+        address
+        city
+        country
+        first_name
+        last_name
+        mobile
+        zip_code
+    }
+}

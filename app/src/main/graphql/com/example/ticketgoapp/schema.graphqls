@@ -1,0 +1,1445 @@
+input SectionInsertInput {
+  remaining: Int
+  sold: Int
+  currency: String
+  description: String
+  name: String
+  event: SectionEventRelationInput
+  capacity: Int
+  _id: ObjectId
+  price: Float
+}
+
+input SegmentInsertInput {
+  _id: ObjectId
+  name: String
+}
+
+input VenueGeneral_infoUpdateInput {
+  smoking_rules: String
+  smoking_rules_unset: Boolean
+  general_rules: String
+  general_rules_unset: Boolean
+  other_rules: String
+  other_rules_unset: Boolean
+}
+
+input EventPriceQueryInput {
+  currency_in: [String]
+  max: Float
+  max_in: [Float]
+  max_gt: Float
+  min_gte: Float
+  OR: [EventPriceQueryInput!]
+  min_lt: Float
+  currency_nin: [String]
+  max_lte: Float
+  currency: String
+  currency_lt: String
+  currency_gt: String
+  min_lte: Float
+  max_ne: Float
+  min_exists: Boolean
+  currency_lte: String
+  currency_gte: String
+  currency_exists: Boolean
+  max_gte: Float
+  max_nin: [Float]
+  AND: [EventPriceQueryInput!]
+  max_exists: Boolean
+  min_in: [Float]
+  min_ne: Float
+  min_gt: Float
+  currency_ne: String
+  min: Float
+  max_lt: Float
+  min_nin: [Float]
+}
+
+input UserQueryInput {
+  city_gt: String
+  mobile_in: [String]
+  address_exists: Boolean
+  email_lt: String
+  email: String
+  role_nin: [String]
+  city_ne: String
+  last_name_gt: String
+  country_exists: Boolean
+  zip_code_nin: [String]
+  last_name_ne: String
+  _id_lte: ObjectId
+  zip_code_in: [String]
+  email_gt: String
+  first_name_ne: String
+  country_ne: String
+  first_name_lt: String
+  last_name_exists: Boolean
+  _id_in: [ObjectId]
+  country_gt: String
+  address_nin: [String]
+  last_name_nin: [String]
+  mobile: String
+  city_gte: String
+  first_name_exists: Boolean
+  zip_code_ne: String
+  _id_lt: ObjectId
+  role: [String]
+  last_name_lte: String
+  _id_gte: ObjectId
+  city_lt: String
+  email_lte: String
+  address_ne: String
+  first_name_nin: [String]
+  zip_code_lte: String
+  city_exists: Boolean
+  email_ne: String
+  last_name: String
+  mobile_ne: String
+  mobile_exists: Boolean
+  first_name_gte: String
+  address_gt: String
+  AND: [UserQueryInput!]
+  email_in: [String]
+  mobile_gt: String
+  first_name: String
+  email_nin: [String]
+  last_name_in: [String]
+  mobile_gte: String
+  first_name_in: [String]
+  _id_gt: ObjectId
+  mobile_lte: String
+  country: String
+  address_lt: String
+  zip_code_exists: Boolean
+  city_lte: String
+  address_gte: String
+  role_in: [String]
+  email_exists: Boolean
+  first_name_lte: String
+  country_in: [String]
+  city: String
+  last_name_gte: String
+  country_gte: String
+  zip_code_gte: String
+  city_nin: [String]
+  address_in: [String]
+  country_nin: [String]
+  mobile_nin: [String]
+  address_lte: String
+  zip_code_lt: String
+  mobile_lt: String
+  last_name_lt: String
+  role_exists: Boolean
+  _id_exists: Boolean
+  _id_ne: ObjectId
+  _id: ObjectId
+  city_in: [String]
+  country_lt: String
+  email_gte: String
+  _id_nin: [ObjectId]
+  zip_code: String
+  first_name_gt: String
+  country_lte: String
+  OR: [UserQueryInput!]
+  zip_code_gt: String
+  address: String
+}
+
+type VenueDetail {
+  accessibility_details: String
+  general_details: String
+  parking_details: String
+}
+
+input EventPriceUpdateInput {
+  max: Float
+  max_inc: Float
+  max_unset: Boolean
+  min: Float
+  min_inc: Float
+  min_unset: Boolean
+  currency: String
+  currency_unset: Boolean
+}
+
+input UserUpdateInput {
+  first_name: String
+  last_name: String
+  last_name_unset: Boolean
+  _id: ObjectId
+  zip_code: String
+  address: String
+  first_name_unset: Boolean
+  mobile_unset: Boolean
+  mobile: String
+  email: String
+  role_unset: Boolean
+  country_unset: Boolean
+  email_unset: Boolean
+  zip_code_unset: Boolean
+  city_unset: Boolean
+  city: String
+  role: [String]
+  _id_unset: Boolean
+  address_unset: Boolean
+  country: String
+}
+
+input TicketQueryInput {
+  _id: ObjectId
+  timestamp_ne: DateTime
+  status_nin: [String]
+  status_lt: String
+  status_gt: String
+  timestamp_lte: DateTime
+  status: String
+  _id_in: [ObjectId]
+  status_exists: Boolean
+  _id_ne: ObjectId
+  AND: [TicketQueryInput!]
+  timestamp_in: [DateTime]
+  _id_exists: Boolean
+  timestamp: DateTime
+  _id_gt: ObjectId
+  _id_lte: ObjectId
+  status_lte: String
+  timestamp_nin: [DateTime]
+  timestamp_gt: DateTime
+  timestamp_gte: DateTime
+  OR: [TicketQueryInput!]
+  section_exists: Boolean
+  section: SectionQueryInput
+  status_in: [String]
+  timestamp_lt: DateTime
+  timestamp_exists: Boolean
+  _id_nin: [ObjectId]
+  _id_gte: ObjectId
+  _id_lt: ObjectId
+  status_gte: String
+  status_ne: String
+}
+
+input EventClassificationQueryInput {
+  OR: [EventClassificationQueryInput!]
+  genres: [GenreQueryInput]
+  genres_in: [GenreQueryInput]
+  genres_nin: [GenreQueryInput]
+  genres_exists: Boolean
+  segments: SegmentQueryInput
+  segments_exists: Boolean
+  AND: [EventClassificationQueryInput!]
+}
+
+input GenreQueryInput {
+  segment_lte: ObjectId
+  name: String
+  _id_lte: ObjectId
+  name_in: [String]
+  segment_lt: ObjectId
+  segment_nin: [ObjectId]
+  _id_nin: [ObjectId]
+  name_exists: Boolean
+  _id_in: [ObjectId]
+  _id_exists: Boolean
+  name_ne: String
+  segment: ObjectId
+  _id_lt: ObjectId
+  segment_gt: ObjectId
+  segment_ne: ObjectId
+  segment_gte: ObjectId
+  name_lte: String
+  name_gte: String
+  _id: ObjectId
+  segment_in: [ObjectId]
+  _id_gte: ObjectId
+  AND: [GenreQueryInput!]
+  name_gt: String
+  _id_gt: ObjectId
+  name_lt: String
+  name_nin: [String]
+  segment_exists: Boolean
+  OR: [GenreQueryInput!]
+  _id_ne: ObjectId
+}
+
+input SectionEventRelationInput {
+  create: EventInsertInput
+  link: ObjectId
+}
+
+input VenueGeneral_infoInsertInput {
+  smoking_rules: String
+  general_rules: String
+  other_rules: String
+}
+
+type InsertManyPayload {
+  insertedIds: [ObjectId]!
+}
+
+input OrderUserRelationInput {
+  create: UserInsertInput
+  link: ObjectId
+}
+
+input VenueDetailUpdateInput {
+  general_details_unset: Boolean
+  parking_details: String
+  parking_details_unset: Boolean
+  accessibility_details: String
+  accessibility_details_unset: Boolean
+  general_details: String
+}
+
+input VenueGeneral_infoQueryInput {
+  general_rules_ne: String
+  smoking_rules_ne: String
+  general_rules: String
+  other_rules_gt: String
+  general_rules_lt: String
+  smoking_rules_lt: String
+  other_rules_lte: String
+  OR: [VenueGeneral_infoQueryInput!]
+  general_rules_gte: String
+  smoking_rules_exists: Boolean
+  other_rules_gte: String
+  other_rules_exists: Boolean
+  smoking_rules_lte: String
+  smoking_rules_gte: String
+  general_rules_nin: [String]
+  smoking_rules_in: [String]
+  general_rules_in: [String]
+  smoking_rules_nin: [String]
+  smoking_rules_gt: String
+  other_rules_in: [String]
+  general_rules_exists: Boolean
+  other_rules_ne: String
+  general_rules_lte: String
+  other_rules_nin: [String]
+  smoking_rules: String
+  other_rules: String
+  AND: [VenueGeneral_infoQueryInput!]
+  other_rules_lt: String
+  general_rules_gt: String
+}
+
+input EventSaleQueryInput {
+  end: DateTime
+  start_gt: DateTime
+  end_gte: DateTime
+  status_gte: String
+  OR: [EventSaleQueryInput!]
+  start_nin: [DateTime]
+  status_in: [String]
+  end_lt: DateTime
+  end_lte: DateTime
+  start_exists: Boolean
+  end_in: [DateTime]
+  status_exists: Boolean
+  status_lt: String
+  status_ne: String
+  status_gt: String
+  end_ne: DateTime
+  start_lt: DateTime
+  end_gt: DateTime
+  status_lte: String
+  end_exists: Boolean
+  start_in: [DateTime]
+  end_nin: [DateTime]
+  status: String
+  status_nin: [String]
+  start_lte: DateTime
+  start_gte: DateTime
+  start_ne: DateTime
+  AND: [EventSaleQueryInput!]
+  start: DateTime
+}
+
+enum VenueSortByInput {
+  URL_DESC
+  ZIP_CODE_ASC
+  ZIP_CODE_DESC
+  _ID_DESC
+  CITY_ASC
+  CITY_DESC
+  NAME_ASC
+  ADDRESS_DESC
+  COUNTRY_ASC
+  NOTE_ASC
+  URL_ASC
+  NOTE_DESC
+  _ID_ASC
+  ADDRESS_ASC
+  COUNTRY_DESC
+  NAME_DESC
+}
+
+input TicketSectionRelationInput {
+  create: SectionInsertInput
+  link: ObjectId
+}
+
+input EventDateQueryInput {
+  end: DateTime
+  span_lt: Int
+  entry: DateTime
+  start_lte: DateTime
+  end_exists: Boolean
+  entry_gte: DateTime
+  span_nin: [Int]
+  end_gte: DateTime
+  entry_ne: DateTime
+  start_lt: DateTime
+  entry_gt: DateTime
+  span_exists: Boolean
+  end_ne: DateTime
+  span: Int
+  entry_in: [DateTime]
+  entry_nin: [DateTime]
+  span_gte: Int
+  end_in: [DateTime]
+  span_ne: Int
+  OR: [EventDateQueryInput!]
+  end_lt: DateTime
+  start_exists: Boolean
+  span_gt: Int
+  start: DateTime
+  entry_lt: DateTime
+  start_gt: DateTime
+  end_nin: [DateTime]
+  span_lte: Int
+  entry_exists: Boolean
+  span_in: [Int]
+  end_gt: DateTime
+  start_ne: DateTime
+  end_lte: DateTime
+  AND: [EventDateQueryInput!]
+  start_gte: DateTime
+  start_in: [DateTime]
+  entry_lte: DateTime
+  start_nin: [DateTime]
+}
+
+input SectionUpdateInput {
+  price_inc: Float
+  event_unset: Boolean
+  remaining_inc: Int
+  remaining_unset: Boolean
+  description_unset: Boolean
+  event: SectionEventRelationInput
+  capacity_inc: Int
+  name_unset: Boolean
+  name: String
+  sold_inc: Int
+  capacity_unset: Boolean
+  description: String
+  currency_unset: Boolean
+  sold: Int
+  sold_unset: Boolean
+  price: Float
+  remaining: Int
+  capacity: Int
+  price_unset: Boolean
+  _id: ObjectId
+  _id_unset: Boolean
+  currency: String
+}
+
+input OrderTicketsRelationInput {
+  create: [TicketInsertInput]
+  link: [ObjectId]
+}
+
+input EventDateUpdateInput {
+  span_unset: Boolean
+  entry_unset: Boolean
+  end: DateTime
+  start: DateTime
+  span: Int
+  span_inc: Int
+  end_unset: Boolean
+  entry: DateTime
+  start_unset: Boolean
+}
+
+input SegmentQueryInput {
+  _id_nin: [ObjectId]
+  name_exists: Boolean
+  name_in: [String]
+  name_gt: String
+  _id_ne: ObjectId
+  name_lte: String
+  _id_gt: ObjectId
+  _id_exists: Boolean
+  AND: [SegmentQueryInput!]
+  OR: [SegmentQueryInput!]
+  name_gte: String
+  name_lt: String
+  name_ne: String
+  _id_gte: ObjectId
+  _id_lt: ObjectId
+  _id_in: [ObjectId]
+  _id_lte: ObjectId
+  name_nin: [String]
+  _id: ObjectId
+  name: String
+}
+
+type Venue {
+  _id: ObjectId
+  address: String
+  city: String
+  country: String
+  details: VenueDetail
+  general_info: VenueGeneral_info
+  images: [String]
+  name: String
+  note: String
+  office_info: VenueOffice_info
+  url: String
+  zip_code: String
+}
+
+type EventSale {
+  end: DateTime
+  start: DateTime
+  status: String
+}
+
+enum SectionSortByInput {
+  PRICE_ASC
+  PRICE_DESC
+  SOLD_ASC
+  CURRENCY_ASC
+  DESCRIPTION_DESC
+  SOLD_DESC
+  EVENT_DESC
+  REMAINING_DESC
+  CAPACITY_DESC
+  _ID_ASC
+  _ID_DESC
+  DESCRIPTION_ASC
+  EVENT_ASC
+  NAME_ASC
+  NAME_DESC
+  REMAINING_ASC
+  CAPACITY_ASC
+  CURRENCY_DESC
+}
+
+input VenueInsertInput {
+  general_info: VenueGeneral_infoInsertInput
+  zip_code: String
+  address: String
+  note: String
+  url: String
+  country: String
+  details: VenueDetailInsertInput
+  city: String
+  office_info: VenueOffice_infoInsertInput
+  _id: ObjectId
+  images: [String]
+  name: String
+}
+
+type Event {
+  _id: ObjectId
+  age_restriction: String
+  classifications: EventClassification
+  dates: EventDate
+  images: [String]
+  info: String
+  name: String
+  note: String
+  price: EventPrice
+  rank: Boolean
+  sales: EventSale
+  status: String
+  tickets_capacity: Int
+  tickets_limit: Int
+  tickets_sold: Int
+  timestamp: DateTime
+  url: String
+  venue: Venue
+}
+
+type VenueOffice_info {
+  email: String
+  phone: String
+}
+
+type EventClassification {
+  genres: [Genre]
+  segments: Segment
+}
+
+type Mutation {
+  deleteManyEvents(query: EventQueryInput): DeleteManyPayload
+  deleteManyGenres(query: GenreQueryInput): DeleteManyPayload
+  deleteManyOrders(query: OrderQueryInput): DeleteManyPayload
+  deleteManySections(query: SectionQueryInput): DeleteManyPayload
+  deleteManySegments(query: SegmentQueryInput): DeleteManyPayload
+  deleteManyTickets(query: TicketQueryInput): DeleteManyPayload
+  deleteManyUsers(query: UserQueryInput): DeleteManyPayload
+  deleteManyVenues(query: VenueQueryInput): DeleteManyPayload
+  deleteOneEvent(query: EventQueryInput!): Event
+  deleteOneGenre(query: GenreQueryInput!): Genre
+  deleteOneOrder(query: OrderQueryInput!): Order
+  deleteOneSection(query: SectionQueryInput!): Section
+  deleteOneSegment(query: SegmentQueryInput!): Segment
+  deleteOneTicket(query: TicketQueryInput!): Ticket
+  deleteOneUser(query: UserQueryInput!): User
+  deleteOneVenue(query: VenueQueryInput!): Venue
+  insertManyEvents(data: [EventInsertInput!]!): InsertManyPayload
+  insertManyGenres(data: [GenreInsertInput!]!): InsertManyPayload
+  insertManyOrders(data: [OrderInsertInput!]!): InsertManyPayload
+  insertManySections(data: [SectionInsertInput!]!): InsertManyPayload
+  insertManySegments(data: [SegmentInsertInput!]!): InsertManyPayload
+  insertManyTickets(data: [TicketInsertInput!]!): InsertManyPayload
+  insertManyUsers(data: [UserInsertInput!]!): InsertManyPayload
+  insertManyVenues(data: [VenueInsertInput!]!): InsertManyPayload
+  insertOneEvent(data: EventInsertInput!): Event
+  insertOneGenre(data: GenreInsertInput!): Genre
+  insertOneOrder(data: OrderInsertInput!): Order
+  insertOneSection(data: SectionInsertInput!): Section
+  insertOneSegment(data: SegmentInsertInput!): Segment
+  insertOneTicket(data: TicketInsertInput!): Ticket
+  insertOneUser(data: UserInsertInput!): User
+  insertOneVenue(data: VenueInsertInput!): Venue
+  replaceOneEvent(query: EventQueryInput, data: EventInsertInput!): Event
+  replaceOneGenre(query: GenreQueryInput, data: GenreInsertInput!): Genre
+  replaceOneOrder(query: OrderQueryInput, data: OrderInsertInput!): Order
+  replaceOneSection(data: SectionInsertInput!, query: SectionQueryInput): Section
+  replaceOneSegment(query: SegmentQueryInput, data: SegmentInsertInput!): Segment
+  replaceOneTicket(query: TicketQueryInput, data: TicketInsertInput!): Ticket
+  replaceOneUser(query: UserQueryInput, data: UserInsertInput!): User
+  replaceOneVenue(query: VenueQueryInput, data: VenueInsertInput!): Venue
+  updateManyEvents(query: EventQueryInput, set: EventUpdateInput!): UpdateManyPayload
+  updateManyGenres(query: GenreQueryInput, set: GenreUpdateInput!): UpdateManyPayload
+  updateManyOrders(set: OrderUpdateInput!, query: OrderQueryInput): UpdateManyPayload
+  updateManySections(query: SectionQueryInput, set: SectionUpdateInput!): UpdateManyPayload
+  updateManySegments(query: SegmentQueryInput, set: SegmentUpdateInput!): UpdateManyPayload
+  updateManyTickets(set: TicketUpdateInput!, query: TicketQueryInput): UpdateManyPayload
+  updateManyUsers(set: UserUpdateInput!, query: UserQueryInput): UpdateManyPayload
+  updateManyVenues(query: VenueQueryInput, set: VenueUpdateInput!): UpdateManyPayload
+  updateOneEvent(query: EventQueryInput, set: EventUpdateInput!): Event
+  updateOneGenre(query: GenreQueryInput, set: GenreUpdateInput!): Genre
+  updateOneOrder(query: OrderQueryInput, set: OrderUpdateInput!): Order
+  updateOneSection(query: SectionQueryInput, set: SectionUpdateInput!): Section
+  updateOneSegment(query: SegmentQueryInput, set: SegmentUpdateInput!): Segment
+  updateOneTicket(query: TicketQueryInput, set: TicketUpdateInput!): Ticket
+  updateOneUser(query: UserQueryInput, set: UserUpdateInput!): User
+  updateOneVenue(query: VenueQueryInput, set: VenueUpdateInput!): Venue
+  upsertOneEvent(query: EventQueryInput, data: EventInsertInput!): Event
+  upsertOneGenre(query: GenreQueryInput, data: GenreInsertInput!): Genre
+  upsertOneOrder(query: OrderQueryInput, data: OrderInsertInput!): Order
+  upsertOneSection(query: SectionQueryInput, data: SectionInsertInput!): Section
+  upsertOneSegment(query: SegmentQueryInput, data: SegmentInsertInput!): Segment
+  upsertOneTicket(query: TicketQueryInput, data: TicketInsertInput!): Ticket
+  upsertOneUser(query: UserQueryInput, data: UserInsertInput!): User
+  upsertOneVenue(query: VenueQueryInput, data: VenueInsertInput!): Venue
+}
+
+input SectionQueryInput {
+  capacity_nin: [Int]
+  price_ne: Float
+  _id_in: [ObjectId]
+  _id_lt: ObjectId
+  _id_gt: ObjectId
+  currency_lte: String
+  sold: Int
+  description_ne: String
+  sold_lt: Int
+  sold_ne: Int
+  _id: ObjectId
+  currency_gte: String
+  sold_gte: Int
+  remaining: Int
+  currency: String
+  AND: [SectionQueryInput!]
+  _id_exists: Boolean
+  remaining_lte: Int
+  price_nin: [Float]
+  capacity_ne: Int
+  name_nin: [String]
+  name_gte: String
+  price_in: [Float]
+  name_gt: String
+  name: String
+  price_gt: Float
+  name_lt: String
+  remaining_exists: Boolean
+  sold_lte: Int
+  name_in: [String]
+  currency_lt: String
+  currency_exists: Boolean
+  capacity_lt: Int
+  price: Float
+  capacity_exists: Boolean
+  currency_ne: String
+  price_gte: Float
+  description_in: [String]
+  name_ne: String
+  sold_gt: Int
+  _id_nin: [ObjectId]
+  _id_ne: ObjectId
+  description_nin: [String]
+  capacity: Int
+  capacity_gte: Int
+  price_lte: Float
+  description_gte: String
+  remaining_nin: [Int]
+  sold_nin: [Int]
+  sold_exists: Boolean
+  _id_lte: ObjectId
+  remaining_in: [Int]
+  remaining_gt: Int
+  description_lte: String
+  currency_nin: [String]
+  sold_in: [Int]
+  currency_gt: String
+  description: String
+  capacity_gt: Int
+  price_exists: Boolean
+  remaining_ne: Int
+  name_lte: String
+  event: EventQueryInput
+  OR: [SectionQueryInput!]
+  currency_in: [String]
+  event_exists: Boolean
+  description_lt: String
+  description_gt: String
+  capacity_in: [Int]
+  remaining_lt: Int
+  price_lt: Float
+  capacity_lte: Int
+  name_exists: Boolean
+  remaining_gte: Int
+  _id_gte: ObjectId
+  description_exists: Boolean
+}
+
+type Section {
+  _id: ObjectId
+  capacity: Int
+  currency: String
+  description: String
+  event: Event
+  name: String
+  price: Float
+  remaining: Int
+  sold: Int
+}
+
+enum GenreSortByInput {
+  NAME_DESC
+  SEGMENT_ASC
+  SEGMENT_DESC
+  _ID_ASC
+  _ID_DESC
+  NAME_ASC
+}
+
+input GenreInsertInput {
+  _id: ObjectId
+  name: String
+  segment: ObjectId
+}
+
+input VenueOffice_infoUpdateInput {
+  phone: String
+  phone_unset: Boolean
+  email: String
+  email_unset: Boolean
+}
+
+input VenueOffice_infoQueryInput {
+  email_exists: Boolean
+  phone_ne: String
+  phone_in: [String]
+  phone: String
+  phone_gt: String
+  phone_gte: String
+  email_gte: String
+  email_lte: String
+  email_lt: String
+  phone_exists: Boolean
+  email_gt: String
+  phone_lt: String
+  email_in: [String]
+  phone_nin: [String]
+  AND: [VenueOffice_infoQueryInput!]
+  email: String
+  email_ne: String
+  phone_lte: String
+  email_nin: [String]
+  OR: [VenueOffice_infoQueryInput!]
+}
+
+type Genre {
+  _id: ObjectId
+  name: String
+  segment: ObjectId
+}
+
+input EventInsertInput {
+  tickets_limit: Int
+  tickets_sold: Int
+  name: String
+  rank: Boolean
+  price: EventPriceInsertInput
+  timestamp: DateTime
+  classifications: EventClassificationInsertInput
+  info: String
+  note: String
+  sales: EventSaleInsertInput
+  images: [String]
+  status: String
+  venue: EventVenueRelationInput
+  url: String
+  dates: EventDateInsertInput
+  tickets_capacity: Int
+  _id: ObjectId
+  age_restriction: String
+}
+
+input EventClassificationGenresRelationInput {
+  link: [ObjectId]
+  create: [GenreInsertInput]
+}
+
+input OrderInsertInput {
+  _id: ObjectId
+  event: OrderEventRelationInput
+  status: String
+  tickets: OrderTicketsRelationInput
+  user: OrderUserRelationInput
+}
+
+input VenueDetailInsertInput {
+  accessibility_details: String
+  general_details: String
+  parking_details: String
+}
+
+input VenueUpdateInput {
+  office_info_unset: Boolean
+  details: VenueDetailUpdateInput
+  name_unset: Boolean
+  note: String
+  note_unset: Boolean
+  zip_code_unset: Boolean
+  url: String
+  _id_unset: Boolean
+  address: String
+  images: [String]
+  images_unset: Boolean
+  country: String
+  zip_code: String
+  city: String
+  url_unset: Boolean
+  address_unset: Boolean
+  details_unset: Boolean
+  name: String
+  country_unset: Boolean
+  general_info: VenueGeneral_infoUpdateInput
+  _id: ObjectId
+  general_info_unset: Boolean
+  office_info: VenueOffice_infoUpdateInput
+  city_unset: Boolean
+}
+
+enum OrderSortByInput {
+  EVENT_ASC
+  EVENT_DESC
+  STATUS_ASC
+  STATUS_DESC
+  USER_ASC
+  USER_DESC
+  _ID_ASC
+  _ID_DESC
+}
+
+scalar DateTime
+
+type Ticket {
+  _id: ObjectId
+  section: Section
+  status: String
+  timestamp: DateTime
+}
+
+type EventPrice {
+  currency: String
+  max: Float
+  min: Float
+}
+
+input EventClassificationSegmentsRelationInput {
+  create: SegmentInsertInput
+  link: ObjectId
+}
+
+input OrderQueryInput {
+  user: UserQueryInput
+  _id_ne: ObjectId
+  _id: ObjectId
+  _id_exists: Boolean
+  event_exists: Boolean
+  _id_lte: ObjectId
+  status_gte: String
+  _id_lt: ObjectId
+  status_gt: String
+  tickets_exists: Boolean
+  event: EventQueryInput
+  status_lt: String
+  tickets_in: [TicketQueryInput]
+  tickets_nin: [TicketQueryInput]
+  status_ne: String
+  _id_nin: [ObjectId]
+  status_nin: [String]
+  status_exists: Boolean
+  _id_gte: ObjectId
+  user_exists: Boolean
+  _id_gt: ObjectId
+  _id_in: [ObjectId]
+  OR: [OrderQueryInput!]
+  status_in: [String]
+  tickets: [TicketQueryInput]
+  status_lte: String
+  AND: [OrderQueryInput!]
+  status: String
+}
+
+input EventQueryInput {
+  timestamp_gt: DateTime
+  tickets_sold_exists: Boolean
+  tickets_limit_exists: Boolean
+  tickets_sold_nin: [Int]
+  tickets_limit_ne: Int
+  _id_ne: ObjectId
+  age_restriction_nin: [String]
+  note_lte: String
+  name_in: [String]
+  url_lt: String
+  note_ne: String
+  tickets_capacity: Int
+  tickets_sold_ne: Int
+  age_restriction: String
+  url_exists: Boolean
+  classifications: EventClassificationQueryInput
+  tickets_limit_nin: [Int]
+  price: EventPriceQueryInput
+  tickets_capacity_exists: Boolean
+  info_lte: String
+  images_exists: Boolean
+  images: [String]
+  tickets_capacity_ne: Int
+  note_gte: String
+  timestamp_nin: [DateTime]
+  tickets_capacity_gte: Int
+  AND: [EventQueryInput!]
+  dates: EventDateQueryInput
+  tickets_sold_lte: Int
+  name: String
+  status_gte: String
+  status_in: [String]
+  status_ne: String
+  note_nin: [String]
+  age_restriction_ne: String
+  status: String
+  url_gte: String
+  name_nin: [String]
+  tickets_capacity_nin: [Int]
+  _id_lte: ObjectId
+  tickets_sold_gt: Int
+  _id_gte: ObjectId
+  url_gt: String
+  tickets_capacity_gt: Int
+  name_gte: String
+  timestamp_exists: Boolean
+  info: String
+  tickets_capacity_in: [Int]
+  price_exists: Boolean
+  age_restriction_gte: String
+  info_ne: String
+  info_nin: [String]
+  tickets_sold: Int
+  age_restriction_exists: Boolean
+  tickets_sold_lt: Int
+  timestamp_gte: DateTime
+  tickets_limit_lte: Int
+  note_lt: String
+  _id_in: [ObjectId]
+  _id: ObjectId
+  name_gt: String
+  tickets_sold_in: [Int]
+  timestamp_lte: DateTime
+  timestamp: DateTime
+  classifications_exists: Boolean
+  images_nin: [String]
+  tickets_limit_lt: Int
+  status_lte: String
+  url_in: [String]
+  info_exists: Boolean
+  images_in: [String]
+  timestamp_lt: DateTime
+  OR: [EventQueryInput!]
+  sales_exists: Boolean
+  age_restriction_gt: String
+  rank: Boolean
+  tickets_limit_gte: Int
+  url_nin: [String]
+  note_exists: Boolean
+  timestamp_in: [DateTime]
+  name_exists: Boolean
+  tickets_limit: Int
+  note_in: [String]
+  url: String
+  rank_exists: Boolean
+  url_ne: String
+  status_nin: [String]
+  age_restriction_in: [String]
+  info_gt: String
+  _id_lt: ObjectId
+  name_lte: String
+  dates_exists: Boolean
+  sales: EventSaleQueryInput
+  venue: VenueQueryInput
+  name_ne: String
+  tickets_limit_in: [Int]
+  status_lt: String
+  note_gt: String
+  tickets_capacity_lt: Int
+  info_in: [String]
+  rank_ne: Boolean
+  age_restriction_lt: String
+  _id_exists: Boolean
+  age_restriction_lte: String
+  _id_gt: ObjectId
+  status_exists: Boolean
+  info_gte: String
+  tickets_capacity_lte: Int
+  venue_exists: Boolean
+  _id_nin: [ObjectId]
+  info_lt: String
+  name_lt: String
+  note: String
+  timestamp_ne: DateTime
+  tickets_limit_gt: Int
+  tickets_sold_gte: Int
+  url_lte: String
+  status_gt: String
+}
+
+type Order {
+  _id: ObjectId
+  event: Event
+  status: String
+  tickets: [Ticket]
+  user: User
+}
+
+enum TicketSortByInput {
+  SECTION_DESC
+  STATUS_ASC
+  STATUS_DESC
+  TIMESTAMP_ASC
+  TIMESTAMP_DESC
+  _ID_ASC
+  _ID_DESC
+  SECTION_ASC
+}
+
+input EventSaleInsertInput {
+  end: DateTime
+  start: DateTime
+  status: String
+}
+
+enum SegmentSortByInput {
+  NAME_DESC
+  _ID_ASC
+  _ID_DESC
+  NAME_ASC
+}
+
+enum EventSortByInput {
+  INFO_DESC
+  NAME_DESC
+  NOTE_DESC
+  TICKETS_CAPACITY_ASC
+  TICKETS_SOLD_ASC
+  _ID_DESC
+  AGE_RESTRICTION_DESC
+  INFO_ASC
+  VENUE_DESC
+  TICKETS_SOLD_DESC
+  TIMESTAMP_ASC
+  NAME_ASC
+  STATUS_DESC
+  TICKETS_LIMIT_DESC
+  TIMESTAMP_DESC
+  URL_ASC
+  URL_DESC
+  VENUE_ASC
+  _ID_ASC
+  AGE_RESTRICTION_ASC
+  TICKETS_CAPACITY_DESC
+  NOTE_ASC
+  STATUS_ASC
+  TICKETS_LIMIT_ASC
+}
+
+enum UserSortByInput {
+  _ID_ASC
+  ADDRESS_ASC
+  COUNTRY_ASC
+  COUNTRY_DESC
+  ZIP_CODE_ASC
+  _ID_DESC
+  CITY_DESC
+  MOBILE_ASC
+  MOBILE_DESC
+  EMAIL_ASC
+  EMAIL_DESC
+  FIRST_NAME_DESC
+  ZIP_CODE_DESC
+  ADDRESS_DESC
+  CITY_ASC
+  FIRST_NAME_ASC
+  LAST_NAME_ASC
+  LAST_NAME_DESC
+}
+
+input VenueQueryInput {
+  zip_code_ne: String
+  city_in: [String]
+  url: String
+  city: String
+  zip_code_in: [String]
+  address_gt: String
+  country_nin: [String]
+  address: String
+  images: [String]
+  images_nin: [String]
+  details_exists: Boolean
+  general_info: VenueGeneral_infoQueryInput
+  office_info_exists: Boolean
+  note_in: [String]
+  url_gte: String
+  _id_lte: ObjectId
+  address_lte: String
+  address_nin: [String]
+  country: String
+  country_ne: String
+  note_gt: String
+  url_in: [String]
+  url_gt: String
+  general_info_exists: Boolean
+  note_nin: [String]
+  name_exists: Boolean
+  url_exists: Boolean
+  address_lt: String
+  country_lt: String
+  url_nin: [String]
+  city_exists: Boolean
+  url_ne: String
+  _id_nin: [ObjectId]
+  city_gt: String
+  _id_ne: ObjectId
+  name_ne: String
+  url_lt: String
+  note_exists: Boolean
+  zip_code: String
+  AND: [VenueQueryInput!]
+  zip_code_exists: Boolean
+  office_info: VenueOffice_infoQueryInput
+  _id_gte: ObjectId
+  note_lte: String
+  images_in: [String]
+  country_gt: String
+  _id_in: [ObjectId]
+  country_gte: String
+  city_nin: [String]
+  name_gt: String
+  zip_code_lt: String
+  _id_gt: ObjectId
+  address_gte: String
+  images_exists: Boolean
+  name_gte: String
+  note_lt: String
+  zip_code_gt: String
+  name_lt: String
+  address_in: [String]
+  note_gte: String
+  _id_lt: ObjectId
+  city_lte: String
+  _id_exists: Boolean
+  note: String
+  zip_code_lte: String
+  url_lte: String
+  details: VenueDetailQueryInput
+  country_exists: Boolean
+  zip_code_nin: [String]
+  address_exists: Boolean
+  address_ne: String
+  OR: [VenueQueryInput!]
+  city_gte: String
+  _id: ObjectId
+  city_ne: String
+  note_ne: String
+  zip_code_gte: String
+  country_in: [String]
+  name: String
+  name_nin: [String]
+  city_lt: String
+  country_lte: String
+  name_in: [String]
+  name_lte: String
+}
+
+input VenueDetailQueryInput {
+  accessibility_details_exists: Boolean
+  general_details_lt: String
+  general_details_exists: Boolean
+  general_details_gt: String
+  accessibility_details: String
+  accessibility_details_lte: String
+  parking_details_nin: [String]
+  accessibility_details_ne: String
+  accessibility_details_lt: String
+  parking_details_lt: String
+  OR: [VenueDetailQueryInput!]
+  accessibility_details_gt: String
+  parking_details_ne: String
+  general_details_gte: String
+  parking_details_exists: Boolean
+  accessibility_details_nin: [String]
+  general_details_ne: String
+  general_details_lte: String
+  parking_details_in: [String]
+  parking_details_gt: String
+  general_details_in: [String]
+  accessibility_details_in: [String]
+  general_details: String
+  general_details_nin: [String]
+  parking_details_gte: String
+  accessibility_details_gte: String
+  parking_details_lte: String
+  AND: [VenueDetailQueryInput!]
+  parking_details: String
+}
+
+input EventClassificationUpdateInput {
+  segments: EventClassificationSegmentsRelationInput
+  segments_unset: Boolean
+  genres: EventClassificationGenresRelationInput
+  genres_unset: Boolean
+}
+
+input GenreUpdateInput {
+  _id: ObjectId
+  _id_unset: Boolean
+  name: String
+  name_unset: Boolean
+  segment: ObjectId
+  segment_unset: Boolean
+}
+
+type VenueGeneral_info {
+  general_rules: String
+  other_rules: String
+  smoking_rules: String
+}
+
+type EventDate {
+  end: DateTime
+  entry: DateTime
+  span: Int
+  start: DateTime
+}
+
+type User {
+  _id: ObjectId
+  address: String
+  city: String
+  country: String
+  email: String
+  first_name: String
+  last_name: String
+  mobile: String
+  role: [String]
+  zip_code: String
+}
+
+input VenueOffice_infoInsertInput {
+  email: String
+  phone: String
+}
+
+input EventUpdateInput {
+  images_unset: Boolean
+  dates: EventDateUpdateInput
+  status_unset: Boolean
+  classifications_unset: Boolean
+  tickets_sold_inc: Int
+  info: String
+  info_unset: Boolean
+  venue_unset: Boolean
+  tickets_capacity_inc: Int
+  tickets_capacity_unset: Boolean
+  name_unset: Boolean
+  price: EventPriceUpdateInput
+  age_restriction_unset: Boolean
+  classifications: EventClassificationUpdateInput
+  tickets_limit_unset: Boolean
+  note_unset: Boolean
+  url: String
+  age_restriction: String
+  images: [String]
+  rank_unset: Boolean
+  tickets_limit_inc: Int
+  timestamp_unset: Boolean
+  sales_unset: Boolean
+  status: String
+  note: String
+  venue: EventVenueRelationInput
+  rank: Boolean
+  price_unset: Boolean
+  timestamp: DateTime
+  tickets_limit: Int
+  tickets_sold_unset: Boolean
+  _id: ObjectId
+  tickets_capacity: Int
+  sales: EventSaleUpdateInput
+  tickets_sold: Int
+  url_unset: Boolean
+  name: String
+  _id_unset: Boolean
+  dates_unset: Boolean
+}
+
+input OrderUpdateInput {
+  tickets_unset: Boolean
+  _id_unset: Boolean
+  event_unset: Boolean
+  status: String
+  tickets: OrderTicketsRelationInput
+  event: OrderEventRelationInput
+  status_unset: Boolean
+  user: OrderUserRelationInput
+  user_unset: Boolean
+  _id: ObjectId
+}
+
+scalar ObjectId
+
+type Segment {
+  _id: ObjectId
+  name: String
+}
+
+input EventPriceInsertInput {
+  min: Float
+  currency: String
+  max: Float
+}
+
+input OrderEventRelationInput {
+  create: EventInsertInput
+  link: ObjectId
+}
+
+input EventSaleUpdateInput {
+  start_unset: Boolean
+  status: String
+  status_unset: Boolean
+  end: DateTime
+  end_unset: Boolean
+  start: DateTime
+}
+
+type Query {
+  event(query: EventQueryInput): Event
+  events(query: EventQueryInput, limit: Int = 100, sortBy: EventSortByInput): [Event]!
+  genre(query: GenreQueryInput): Genre
+  genres(query: GenreQueryInput, limit: Int = 100, sortBy: GenreSortByInput): [Genre]!
+  order(query: OrderQueryInput): Order
+  orders(sortBy: OrderSortByInput, query: OrderQueryInput, limit: Int = 100): [Order]!
+  section(query: SectionQueryInput): Section
+  sections(query: SectionQueryInput, limit: Int = 100, sortBy: SectionSortByInput): [Section]!
+  segment(query: SegmentQueryInput): Segment
+  segments(query: SegmentQueryInput, limit: Int = 100, sortBy: SegmentSortByInput): [Segment]!
+  ticket(query: TicketQueryInput): Ticket
+  tickets(query: TicketQueryInput, limit: Int = 100, sortBy: TicketSortByInput): [Ticket]!
+  user(query: UserQueryInput): User
+  users(limit: Int = 100, sortBy: UserSortByInput, query: UserQueryInput): [User]!
+  venue(query: VenueQueryInput): Venue
+  venues(query: VenueQueryInput, limit: Int = 100, sortBy: VenueSortByInput): [Venue]!
+}
+
+input TicketUpdateInput {
+  status_unset: Boolean
+  timestamp: DateTime
+  timestamp_unset: Boolean
+  _id: ObjectId
+  _id_unset: Boolean
+  section: TicketSectionRelationInput
+  section_unset: Boolean
+  status: String
+}
+
+input TicketInsertInput {
+  section: TicketSectionRelationInput
+  status: String
+  timestamp: DateTime
+  _id: ObjectId
+}
+
+input UserInsertInput {
+  city: String
+  zip_code: String
+  last_name: String
+  address: String
+  country: String
+  first_name: String
+  _id: ObjectId
+  mobile: String
+  role: [String]
+  email: String
+}
+
+type DeleteManyPayload {
+  deletedCount: Int!
+}
+
+input EventClassificationInsertInput {
+  genres: EventClassificationGenresRelationInput
+  segments: EventClassificationSegmentsRelationInput
+}
+
+input EventVenueRelationInput {
+  create: VenueInsertInput
+  link: ObjectId
+}
+
+input EventDateInsertInput {
+  start: DateTime
+  end: DateTime
+  entry: DateTime
+  span: Int
+}
+
+type UpdateManyPayload {
+  matchedCount: Int!
+  modifiedCount: Int!
+}
+
+input SegmentUpdateInput {
+  _id: ObjectId
+  _id_unset: Boolean
+  name: String
+  name_unset: Boolean
+}
